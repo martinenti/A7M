@@ -33,8 +33,7 @@ if (message.content === '*help') {
         let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
      
-   .addField("**:globe_with_meridians:─══════ {✯Choose✯} ══════─
-‎**","** **")
+   .addField("**:globe_with_meridians:─══════ {✯Choose✯} ══════─**","** **")
    .addField("** *puplic :one: **","**to see puplic commands**")   
    .addField("** *staff :two: **","**to see staff commands**")
    .addField("** *fun :three: **","**to see fun commands**")                
