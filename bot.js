@@ -1,9 +1,10 @@
-const Discord = require('discord.js');
+       const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '+'
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F
+client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -25,9 +26,8 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
+}); 
 
-
-        
 client.on('message', message => {
 if (message.content === '+help') {
         let embed = new Discord.RichEmbed()
@@ -52,14 +52,10 @@ if (message.content === '+help') {
   message.channel.sendEmbed(embed);
     }
 });
-
-
-
 client.on('message', message => {
 if (message.content === '+عام') {
         let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-
      .addField("**:globe_with_meridians:─══════ {✯الاكواد العامه✯} ══════─**","** **")
      .addField("** +roles:dress: **","**لعرض جميع رتب السيرفر**")
      .addField("** +server :camping:**","**لعرض معلومات عن السيرفر**")
@@ -80,13 +76,10 @@ if (message.content === '+عام') {
    }
 });
  
-
-
 client.on('message', message => {
 if (message.content === '+ادمن') {
         let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-
      .addField("**:globe_with_meridians:─══════ {✯اكواد الادمن✯} ══════─**","** **")
      .addField("** +ban :no_entry:**","**حظرعضو**")
      .addField("** +kick :outbox_tray:**","**طرد عضو**")
@@ -104,8 +97,6 @@ if (message.content === '+ادمن') {
    }
 });
  
-
-
 client.on('message', message => {
 if (message.content === '+العاب') {
         let embed = new Discord.RichEmbed()
@@ -122,27 +113,45 @@ if (message.content === '+العاب') {
 .setColor('RANDOM')
  message.author.sendEmbed(embed);
    }
-});
+  
+ }); 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  client.login(process.env.BOT_TOKEN);
+
  
-
-
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.login(process.env.BOT_TOKEN)
