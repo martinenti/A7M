@@ -118,52 +118,6 @@ if (message.content === '+العاب') {
  }); 
 
 
-ient.on('message', message => {
-   if (message.content.startsWith("+id")) {
-                if(!message.channel.guild) return message.reply('**هذا الامر فقط في السيرفرات وشكرا**');
-
-               var mentionned = message.mentions.users.first();
-    var mentionavatar;
-      if(mentionned){
-          var mentionavatar = mentionned;
-      } else {
-          var mentionavatar = message.author;
-          
-      }
-   let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-   .setThumbnail(`${mentionavatar.avatarURL}`)
-  .addField("الاسم:",`<@` + `${mentionavatar.id}` + `>`, true)
-  .addField('التاق:',"#" +  `${mentionavatar.discriminator}`, true)
-   .addField("الايدي:", "**[" + `${mentionavatar.id}` + "]**", true)
-  .addField("تم الانشاء في:", "**[" + `${mentionavatar.createdAt}` + "]**", true)
-     
-     
-  message.channel.sendEmbed(embed);
-  console.log('[id] Send By: ' + message.author.username)
-    }
-});
-
-
-client.on('message', message => {
-
-     if (message.author.bot) return;
-    if (!message.channel.guild) return;
- 
-    
-
-if(message.content.startsWith(prefix + 'bot')) {
-        const embed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setDescription(`Servers🌐 ${client.guilds.size}
-Users👥 ${client.users.size}
-Channels📚 ${client.channels.size} `)
-        message.channel.sendEmbed(embed);
-    }
- 
-
-
-
 
 
 
