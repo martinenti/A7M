@@ -228,7 +228,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
-      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://discordapp.com/oauth2/authorize/?permissions=805314622&scope=bot&client_id=350470102803546115`)
+      .addField('شكرا لك لاستخدامك ل هيروز بوت', `https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=0&scope=bot`)
   message.author.send({embed});
 
  }
@@ -271,7 +271,7 @@ client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')  
+      .setFooter('© Heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')  
       .addField('سيرفر الدعم الفني', `  https://discord.gg/dFCBGX6  `)
   message.author.send({embed});
 
