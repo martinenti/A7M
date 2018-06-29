@@ -188,7 +188,7 @@ client.on("message", message => {
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('© heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
       .setFooter('اوامر الادمنيه')
 	  .addField('-bc', `لخاصية البرودكستات`)
       .setFooter('======================================================')
@@ -227,7 +227,7 @@ client.on("message", message => {
  if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('© Heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
       .addField('شكرا لك لاستخدامك ل هيروز بوت', `https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=0&scope=bot`)
   message.author.send({embed});
 
