@@ -1,21 +1,27 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
 const client = new Discord.Client();
 const prefix = '+'
-client.on('ready', () => {
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
   console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
   console.log('')
-  console.log('            ╔[════════════]╗')
-  console.log('              Bot Is Online')
-  console.log('            ╚[════════════]╝')
-  console.log('')
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('Informations :')
   console.log('')
   console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log('')
   console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log('')
+  console.log(`channels! [ " ${client.channels.size} " ]`);
   console.log('╚[════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════]╗')
+  console.log(' Bot Is Online')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
 });
 client.on('ready', () => {
      client.user.setActivity("+help",{type: 'Playing'})
@@ -3708,15 +3714,6 @@ const x5bz4 = [
    message.react("??")
   }
 });
-
-
-
-
-
-
-
-
-
 
 
 client.login(process.env.BOT_TOKEN);
