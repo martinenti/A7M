@@ -2,9 +2,24 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '+'
 
-client.on("ready", async () => {
-client.user.setGame("+help / +inv");
-});
+client.on('ready', function(){
+        client.user.setStatus("dnd");
+        var ms = 60000 ;
+        var setGame = [+play/+help];
+        var i = -1;
+        var j = 0;
+        setInterval(function (){
+            if( i == -1 ){
+                j = 1;
+            }
+            if( i == (setGame.length)-1 ){
+                j = -1;
+            }
+            i = i+j;
+            client.user.setGame(setGame[i],https://www.instagram.com/Abood_naimat0/);
+        }, ms);60000
+
+   });
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
