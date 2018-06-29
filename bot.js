@@ -142,6 +142,32 @@ client.on('message', message => {
     }
 });
   
+client.on('message', msg =>{
+    let message=msg;
+    if(message.content.startsWith("bc")){
+        var args = message.content.split(' ').slice(1).join(' ');
+    msg.guild.members.forEach(m=>{
+        m.send(args.replace(/[user]/g,m)).catch();
+    if(message.attachments.first()){
+m.sendFile(message.attachments.first().url).catch();
+    }
+    })    ;
+    }
+});  
+  
+  
+  
+  client.on('message', message => {
+    if(message.channel.type === "dm") return;
+       if (message.content === prefix + "bot") {
+       let embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .addField("Servers:globe_with_meridians:" , client.guilds.size)
+    .addField("Users:busts_in_silhouette:" , client.users.size)
+    .addField("Channels:books:" , client.channels.size)
+    message.channel.sendEmbed(embed);
+      }
+  });
   
   
   
@@ -156,11 +182,31 @@ client.on('message', message => {
   
   
   
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   client.login(process.env.BOT_TOKEN);
