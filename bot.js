@@ -156,17 +156,7 @@ m.sendFile(message.attachments.first().url).catch();
 });  
   
   
-  var prefix = "+"
-  client.on('message', message => {
-    if(message.channel.type === "dm") return;
-       if (message.content === prefix + "bot") {
-       let embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .addField("Servers:globe_with_meridians:" , client.guilds.size)
-    .addField("Users:busts_in_silhouette:" , client.users.size)
-    .addField("Channels:books:" , client.channels.size)
-    message.channel.sendEmbed(embed);
-      }
+ 
   });
   
   
