@@ -1,4 +1,4 @@
-       const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '+'
 
@@ -26,7 +26,8 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
-}); 
+});
+
 
 client.on('message', message => {
 if (message.content === '+help') {
@@ -115,8 +116,9 @@ if (message.content === '+العاب') {
    }
   
  }); 
-  
-client.on('message', message => {
+
+
+ient.on('message', message => {
    if (message.content.startsWith("+id")) {
                 if(!message.channel.guild) return message.reply('**هذا الامر فقط في السيرفرات وشكرا**');
 
@@ -141,37 +143,24 @@ client.on('message', message => {
   console.log('[id] Send By: ' + message.author.username)
     }
 });
-  
-client.on('message', msg =>{
-    let message=msg;
-    if(message.content.startsWith("bc")){
-        var args = message.content.split(' ').slice(1).join(' ');
-    msg.guild.members.forEach(m=>{
-        m.send(args.replace(/[user]/g,m)).catch();
-    if(message.attachments.first()){
-m.sendFile(message.attachments.first().url).catch();
+
+
+client.on('message', message => {
+
+     if (message.author.bot) return;
+    if (!message.channel.guild) return;
+ 
+    
+
+if(message.content.startsWith(prefix + 'bot')) {
+        const embed = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`Servers🌐 ${client.guilds.size}
+Users👥 ${client.users.size}
+Channels📚 ${client.channels.size} `)
+        message.channel.sendEmbed(embed);
     }
-    })    ;
-    }
-});  
-  
-  
  
-  });
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
 
 
@@ -197,9 +186,18 @@ m.sendFile(message.attachments.first().url).catch();
 
 
 
-  
-  
-  client.login(process.env.BOT_TOKEN);
 
- 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.login(process.env.BOT_TOKEN);
