@@ -120,10 +120,8 @@ if (message.content === '+العاب') {
 
 
 
-// امر الفل level
 const fs = require('fs');
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
-const prefix = "+";
 
 client.on("message", message => {
   if (!message.content.startsWith(prefix)) return;
@@ -140,12 +138,12 @@ client.on("message", message => {
   if (curLevel > userData.level) {
     // Level up!
     userData.level = curLevel;
-     message.reply(`**لقد وصلت الى المستوى ${curLevel}**`).then(m => m.delete(100000));
+     message.reply(**لقد وصلت الى المستوى ${curLevel}**).then(m => m.delete(100000));
   }
 
   if (message.content.startsWith(prefix + "level")) {
-    
-      message.reply(` ** انت في المستوى ${userData.level}  مع ${userData.points} نقاط . ** `).then(m => m.delete(100000));
+
+      message.reply(** انت في المستوى ${userData.level}  مع ${userData.points} نقاط . **).then(m => m.delete(100000));
 
   }
   fs.writeFile("./points.json", JSON.stringify(points), (err) => {
