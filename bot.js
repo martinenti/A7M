@@ -156,7 +156,7 @@ m.sendFile(message.attachments.first().url).catch();
 });  
   
   
-  
+  var prefix = "+"
   client.on('message', message => {
     if(message.channel.type === "dm") return;
        if (message.content === prefix + "bot") {
