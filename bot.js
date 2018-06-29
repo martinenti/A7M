@@ -116,17 +116,69 @@ if (message.content === '+العاب') {
   
  }); 
   
+const Slam = [
+  'اهلا وسهلا بك',
+  'اهلا كيفك اليوم',
+  'اهلا نورت السيرفر',
+  'اهلا ايش اكلت اليوم ',
+]
+client.on('message', msg => {
+if  (msg.content === 'اهلا') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(msg.author.avatarURL)
+    msg.channel.send(slamat);
+  }
+});
   
   
   
+const Slam = [
+  'اهلا وسهلا بك',
+  'اهلا كيفك اليوم',
+  'اهلا نورت السيرفر',
+  'اهلا ايش اكلت اليوم ',
+]
+client.on('message', msg => {
+if  (msg.content === 'هلا') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(msg.author.avatarURL)
+    msg.channel.send(slamat);
+  }
+});  
   
   
   
+  const Slam = [
+  'اهلا وسهلا بك',
+  'اهلا كيفك اليوم',
+  'اهلا نورت السيرفر',
+  'اهلا ايش اكلت اليوم ',
+]
+client.on('message', msg => {
+if  (msg.content === 'هلو') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(msg.author.avatarURL)
+    msg.channel.send(slamat);
+  }
+});
   
-  
-  
-  
-  
+  const Slam = [
+  'اهلا وسهلا بك',
+  'اهلا كيفك اليوم',
+  'اهلا نورت السيرفر',
+  'اهلا ايش اكلت اليوم ',
+]
+client.on('message', msg => {
+if  (msg.content === 'هاي') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(msg.author.avatarURL)
+    msg.channel.send(slamat);
+  }
+});
   
   
   
