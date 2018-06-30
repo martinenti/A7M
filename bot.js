@@ -560,7 +560,26 @@ client.on('message' , async (message) => {
 
 
 
-
+client.on('message' , async (message) => {
+       if(message.content.startsWith(`<@${client.user.id}>`)) {
+              
+ let responses = [
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر ',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر',
+        'ليش صحيتني من النوب امم علي العموم اكتب +help عشان تشوف الاوامر'
+    ]
+    
+    // Fetch a random item from the array
+    let fetched = responses[Math.floor(Math.random() * responses.length)];
+   message.reply(fetched)
+       }
+  
+});
 
 
 
