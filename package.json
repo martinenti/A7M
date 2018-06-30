@@ -42,10 +42,10 @@
     "simple-youtube-api": "5.0.1",
     "youtube-info": "^1.2.0",
     "ytdl-core": "0.20.2"
-  }
-}
+  },
 "math-expression-evaluator": {
       "version": "1.2.17",
       "resolved": "https://registry.npmjs.org/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz",
       "integrity": "sha1-3oGf282E3M2PrlnGrreWFbnSZqw="
-    },
+    }
+}
