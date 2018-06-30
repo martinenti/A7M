@@ -288,7 +288,7 @@ client.on('message', message => {
  });
 
  client.on('message', message => {
-   if (message.content.startsWith("+عقاب")) {
+   if (message.content.startsWith("عقاب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -300,6 +300,127 @@ client.on('message', message => {
     }
 });
 
+client.on('message', function(message) {
+    if(message.content.startsWith(prefix + 'roll')) {
+        let args = message.content.split(" ").slice(1);
+        if (!args[0]) {
+            message.channel.send('**حط رقم معين يتم السحب منه**');
+            return;
+            }
+    message.channel.send(Math.floor(Math.random() * args.join(' ')));
+            if (!args[0]) {
+          message.edit('1')
+          return;
+        }
+    }
+});
+
+client.on('message', message => {
+            if (message.content.startsWith("القوانين")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **اولا** ' ,' **ممنوع السب** ')
+.addField('     **ثانيا** ' ,' **لا تسوي سبام ** ')
+.addField('     **ثالثا** ' ,' **لا تزعج الاخرين** ')
+.addField('    **رابعا**' ,' **ممنوع الاعلانات** ')
+.addField('    **خامسا**' ,' **احترم الاخرين** ')
+.addField('    **سادسا**' ,' **لا تنشر في الشات او بل خاص** ')
+.addField('    **سابعا**' ,' **لا تنشر روابط!** ')
+.addField('    **ثامنا**' ,' **لا تسوي سبام ايموجي** ')
+.addField('    **تاسعا**' ,' **لا تطلب رتبه الاداره !** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+const math = require('math-expression-evaluator');
+client.on('message' , async (message) => {
+       if(message.content.startsWith(prefix + "cal")) {
+          let args = message.content.split(" ").slice(1);
+    const embed = new  Discord.RichEmbed()
+        .setColor(0xffffff);
+    if (!args[0]) {
+        embed.setFooter('Please input an expression.');
+        return message.channel.send(embed);
+    }
+    let result;
+    try {
+        result = math.eval(args.join(' '));
+    } catch (e) { 
+        result = 'Error: "Invalid Input"';
+    }
+    embed.addField('Input', `\`\`\`js\n${args.join(' ')}\`\`\``)
+         .addField('Output', `\`\`\`js\n${result}\`\`\``);
+    message.channel.send(embed);
+    
+}
+});
+
+
+client.on('message', message => {
+if (message.content.startsWith("ban")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
+
+    mention.ban("By: " + message.author.tag);
+    
+    message.channel.send("تم أعطاء باند الى : " + mention.tag);
+};
+});
+
+client.on('message', message => {
+   let args = message.content.split(" ").slice(1);
+  if (message.content.startsWith(prefix + "find")) {
+let Embed = new Discord.RichEmbed()
+        .setColor(0x36393e);
+    if (!args[0]) {
+        Embed.setFooter(`Incorrect usage: sh < 1+ characterSeach >`);
+        return message.channel.send(Embed); 
+    }
+
+    if (args[0].length <= 1) {
+        Embed.setFooter(`Incorrect usage: sh < 1+ characterSeach >`);
+        return message.channel.send(Embed); 
+    }
+    let array = []; 
+    let number = 0; 
+    message.guild.members.map(m => { 
+        if (m.user.username.toUpperCase().includes(args[0].toUpperCase())) { 
+            number++; 
+            array.push(`${number}. ${m.user.username}`); 
+        }
+    });
+    Embed.setTitle(`Results for "${args[0]}"`);
+    Embed.setDescription(`\`\`\`${array.slice(0, 30).join(`\n`)}\`\`\``);
+
+    message.channel.send(Embed);
+   
+   }
+}); 
+
+
+client.on('message', message => {
+   let embed = new Discord.RichEmbed()
+
+    let args = message.content.split(' ').slice(1).join(' ');
+     if(!message.channel.guild) return;
+if(message.content.split(' ')[0] == '=bc') {
+         message.react("??")
+          let embed = new Discord.RichEmbed()
+    .setColor("#FF00FF")
+    .setThumbnail(message.author.avatarURL)   
+                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
+                 message.channel.sendEmbed(embed);
+        message.guild.members.forEach(m => {
+            var bc = new Discord.RichEmbed()
+.addField('**? Sender  :**', `*** ? ${message.author.username}#${message.author.discriminator}***`)
+            .addField('***? Server  :***', `*** ? ${message.guild.name}***`)               
+    .setColor('#ff0000')
+                 .addField('ّ', args)
+            m.send(``,{embed: bc});
+        });
+    }
+})
 
 
 
