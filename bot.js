@@ -459,12 +459,12 @@ client.on("guildMemberAdd", member => {
 
 
 client.on('message', message => {
-    var prefix = "!";
+    var prefix = "+";
 
       if (!message.content.startsWith(prefix)) return;
       var args = message.content.split(' ').slice(1);
       var argresult = args.join(' ');
-      if (message.author.id == 411564557027508235) return;
+      if (message.author.id == 257147010488991744) return;
 
 
     if (message.content.startsWith(prefix + 'playing')) {
@@ -488,7 +488,7 @@ client.on('message', message => {
     } else
 
     if (message.content.startsWith(prefix + 'setavatar')) {
-    if (message.author.id !== '57147010488991744') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+ 
     client.user.setAvatar(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
     }
