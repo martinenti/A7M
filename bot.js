@@ -321,28 +321,7 @@ client.on('message', message => {
     }
 });
 
-const math = require('math-expression-evaluator');
-client.on('message' , async (message) => {
-       if(message.content.startsWith(prefix + "cal")) {
-          let args = message.content.split(" ").slice(1);
-    const embed = new  Discord.RichEmbed()
-        .setColor(0xffffff);
-    if (!args[0]) {
-        embed.setFooter('Please input an expression.');
-        return message.channel.send(embed);
-    }
-    let result;
-    try {
-        result = math.eval(args.join(' '));
-    } catch (e) { 
-        result = 'Error: "Invalid Input"';
-    }
-    embed.addField('Input', `\`\`\`js\n${args.join(' ')}\`\`\``)
-         .addField('Output', `\`\`\`js\n${result}\`\`\``);
-    message.channel.send(embed);
-    
-}
-});
+
 
 
 client.on('message', message => {
@@ -411,7 +390,65 @@ if(message.content.split(' ')[0] == '=bc') {
 })
 
 
+client.on('message', message => {
+  if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('+bc-users')){
+message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+client.users.forEach(m =>{
+var bc = new
+Discord.RichEmbed()
+.setColor('RANDOM')
+.setTitle('Broadcast')
+.addField('Server', message.guild.name)
+.addField('Sender', message.author.username)
+.addField('Message', args)
+m.send({ embed: bc })
+})
+}
+});
 
+
+
+client.on('message' , message => {
+  var prefix = "+";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "bcrole")) {
+    let args = message.content.split(" ").slice(1);
+
+    if(!args[0]) {
+      message.channel.send("قم بمنشنة الرتبة | *bcrole @everyone رساله");
+        return;
+    }
+    if(!args[1]) {
+      message.channel.send("قم بمنشنة الرتبة | *bcrole @everyone رساله");
+        return;
+    }
+
+      if(args[0] == "@everyone") {
+        message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.memberCount} اعضاء`);
+        message.guild.members.forEach(mi => {
+          mi.send(
+          "الرسالة :" + "\n" +
+         "**" + `${args[1]}` + "**"
+          );
+        });
+        return;
+      }
+          var role = message.mentions.roles.first();
+            if(!role) {
+              message.reply("لا توجد رتبة بهذا الاسم");
+                return;
+            }
+        message.guild.members.filter(m => m.roles.get(role.id)).forEach(sa => {
+        sa.send(
+          "الرسالة :" + "\n" +
+        "**" + `${args[1]}` + "**"
+          );
+        });
+      message.channel.send(`**لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عظو**`);
+    }
+});
 
 
 
