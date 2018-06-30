@@ -371,7 +371,7 @@ client.on('message', message => {
 
     let args = message.content.split(' ').slice(1).join(' ');
      if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '=bc') {
+if(message.content.split(' ')[0] == '+bc') {
          message.react("??")
           let embed = new Discord.RichEmbed()
     .setColor("#FF00FF")
@@ -461,43 +461,161 @@ client.on("guildMemberAdd", member => {
 
 
 
-      var argresult = args.join(' ');
-      if (message.author.id == 411564557027508235) return;
-
-
-    if (message.content.startsWith(prefix + 'playing')) {
-    if (message.author.id !== '257147010488991744') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-    client.user.setGame(argresult);
-        message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
-    } else
-
-
-    if (message.content.startsWith(prefix + 'streem')) {
-    if (message.author.id !== '257147010488991744') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-    client.user.setGame(argresult, "http://twitch.tv/HP");
-        message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
-    } else
-
-    if (message.content.startsWith(prefix + 'setname')) {
-    if (message.author.id !== '257147010488991744') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-      client.user.setUsername(argresult).then
-          message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
-      return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
-    } else
-
-    if (message.content.startsWith(prefix + 'setavatar')) {
-    if (message.author.id !== '257147010488991744') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
-    client.user.setAvatar(argresult);
-        message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+   client.on('message' , async (message) => {
+       if(message.content.startsWith(prefix + "rps")) {
+              let args = message.content.split(" ").slice(1);
+  var choice = args[0];
+  if (choice == "ورقة" || choice == "p") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "ورقة";
+    } else if (numb > 50) {
+      var choice2 = "حجر";
+    } else {
+      var choice2 = "مقص";
     }
+    if (choice2 == "مقص") {
+      var response = " لقد اخترت **مقص** و :v: ولقد فزت"
+    } else if (choice2 == "ورقة") {
+      var response = " لقد اخترت **ورقه** :hand_splayed: انه تعادل "
+    } else {
+      var response = " لقد اخترت **حجر** :punch:  انت الفائز"    
+    }
+    message.channel.send(response);
+  } else if (choice == "حجر" || choice == "r") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "ورقة";
+    } else if (numb > 50) {
+      var choice2 = "حجر";
+    } else {
+      var choice2 = "مقص";
+    }
+    if (choice2 == "ورقة") {
+      var response = " لقد اخترت **ورقه** :hand_splayed: ولقد فزت"
+    } else if (choice2 == "حجر") {
+      var response = "لقد اخترت **حجر** :punch: انه تعادل "
+    } else {
+      var response = " لقد اخترت **مقص** :v: انت الفائز"
+    }
+    message.channel.send(response);
+  } else if (choice == "مقص" || choice == "s") {
+    var numb = Math.floor(Math.random() * 100);
+    if (numb <= 50) {
+      var choice2 = "ورقة";
+    } else if (numb > 50) {
+      var choice2 = "حجر";
+    } else {
+      var choice2 = "مقص";
+    }
+    if (choice2 == "حجر") {
+      var response = "لقد اخترت **ورقه** :hand_splayed: لقد فزت"
+    } else if (choice2 == "مقص") {
+      var response = "لقد اخترت **مقص** :v: انه تعادل"
+    } else {
+      var response = " لقد اخترت **حجر** :punch: انت الفائز "
+    }
+    message.channel.send(response);
+  } else {
+    message.channel.send(`يجب عليك استعمال \`${prefix}rps\` <حجر|ورقة|مقص>`);
+  }
+}
+
+});
 
 
 
-     });
+
+
+const secreT = [
+  "**الحياة بكل ما فيها تقف دائمًا على حد الوسطية بين اتزان المعنى وضده من حب وكره وحق وباطل وعدل وظلم**.",
+  "**كى تعيش عليك ان تتقن فن التجاهل باحتراف**.",
+  "**لا تحزن على من اشعرك بان طيبتك غباء امام وقاحته**.",
+  "**هناك من يحلم بالنجاح وهناك من يستيقظ باكرا لتحقيقه**.",
+  "**ان تعالج ألمك بنفسك تلك هى القوة**.", 
+  "**الجميع يسمع ما تقول والاصدقاء ينصتون لما تقول وافضل الاصدقاء ينصتون لما اخفاه سكوتك**.", 
+  "**انتهى زمن الفروسية ، لم تنقرض الخيول بل انقرض الفرسان**.", 
+  "**ان تكون اخرسا عاقلا خير من ان تكون نطوقا جهولا**.", 
+  "**المناقشات العقيمة لا تنجب افكارا**.", 
+  "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
+  "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
+]
+
+
+ client.on('message', message => {
+   if (message.content.startsWith("خواطر")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+
+   .setThumbnail(message.author.avatarURL) 
+ .addField('لعبه خواطر' ,
+  `${secreT[Math.floor(Math.random() * secreT.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
+    }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 client.on('message', message = {
+  if (true) {
+if (message.content === '+invite') {
+      message.author.send('  رابط بوتك    تفضل ربط البوت     ').catch(e = console.log(e.stack));
+ 
+    }
+   }
+  });
+ 
+ 
+client.on('message', message = {
+     if (message.content === .invite) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor(#9B59B6)
+  .addField( Done  تــــم ,    تــــم ارســالك في الخــاص)
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
-
+client.on("message", message => {
+     var prefix = "+";
+    if(message.content.startsWith(prefix + 'روم مؤقت')) {
+     let args = message.content.split(" ").slice(1);
+       var nam = args.join(' ');
+    
+      if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('`ADMINISTRATOR` للأسف هذه الخاصية تحتاج الى ').then(msg => msg.delete(6000))
+      if (!nam) return message.channel.send(`<@${message.author.id}> يجب عليك ادخال اسم`).then(msg => msg.delete(10000))
+      message.guild.createChannel(nam, 'voice').then(c => setTimeout(() => c.delete(), 120000)) // كل 60 تساوي دقيقة عدل عليها الوقت لي تبيه 
+      message.channel.send(`? TemporarySound : \`${nam}\``).then(c => setTimeout(() => c.edit(`<@${message.author.id}> ?  انتهى وقت الروم الصوتي`), 120000))  // 120000 دقيقتان
+    }
+    });
+	 
+	 
+	 
+	 
+	  const zalgo = require('zalgolize');
+ client.on('message', message => {
+   if(message.content.startsWith(prefix + "tag")) {
+ let args = message.content.split(' ').slice(1);
+ message.channel.sendMessage("", {embed: {
+      title: `tag`,
+      color: 0x06DF00,
+      description: `\n ${zalgo(args.join(' '))}`,
+     
+    }
+    });
+  }
+});
 
 
 
