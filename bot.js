@@ -492,7 +492,7 @@ client.on('message', message => {
     client.user.setAvatar(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
     }
-
+});
 
 
 
