@@ -583,61 +583,6 @@ client.on('message' , async (message) => {
 
 
 
-const secreT = [
-  "**الحياة بكل ما فيها تقف دائمًا على حد الوسطية بين اتزان المعنى وضده من حب وكره وحق وباطل وعدل وظلم**.",
-  "**كى تعيش عليك ان تتقن فن التجاهل باحتراف**.",
-  "**لا تحزن على من اشعرك بان طيبتك غباء امام وقاحته**.",
-  "**هناك من يحلم بالنجاح وهناك من يستيقظ باكرا لتحقيقه**.",
-  "**ان تعالج ألمك بنفسك تلك هى القوة**.", 
-  "**الجميع يسمع ما تقول والاصدقاء ينصتون لما تقول وافضل الاصدقاء ينصتون لما اخفاه سكوتك**.", 
-  "**انتهى زمن الفروسية ، لم تنقرض الخيول بل انقرض الفرسان**.", 
-  "**ان تكون اخرسا عاقلا خير من ان تكون نطوقا جهولا**.", 
-  "**المناقشات العقيمة لا تنجب افكارا**.", 
-  "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
-  "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
-]
-
-
- 
-
-
-client.on('message', message = {
-  if (true) {
-if (message.content === '.invite') {
-      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=0&scope=bot   تفضل ربط البوت     ').catch(e = console.log(e.stack));
- 
-    }
-   }
-  });
- 
- 
-client.on('message', message = {
-     if (message.content === .invite) {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor(#9B59B6)
-  .addField( Done  تــــم ,    تــــم ارســالك في الخــاص)
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
- const zalgo = require('zalgolize');
- client.on('message', message => {
-   if(message.content.startsWith(prefix + "tag")) {
- let args = message.content.split(' ').slice(1);
- message.channel.sendMessage("", {embed: {
-      title: `tag`,
-      color: 0x06DF00,
-      description: `\n ${zalgo(args.join(' '))}`,
-     
-    }
-    });
-  }
-});
 
 
 
