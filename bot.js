@@ -607,7 +607,7 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "ban") {
+  if (command == "+ban") {
                if(!message.channel.guild) return;
          
   if(!message.guild.member(message.author).hasPermission("MOVE_MEMBERS")) return message.reply("**You Don't Have ` BAN_MEMBERS ` Permission**").then(msg => msg.delete(5000));
