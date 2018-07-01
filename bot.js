@@ -592,11 +592,7 @@ client.on("message", message => {
       .setFooter('© Heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
       .addField('شكرا لك لاستخدامك ل هيروز بوت', `https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=8&scope=bot`)
   message.author.send({embed});
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
- }
-});
+
 
 
 
