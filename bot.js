@@ -598,8 +598,6 @@ client.on("message", message => {
 
 
 
-
-var prefix = "+"
 client.on('message', message => {
   if (message.author.ban) return;
   if (!message.content.startsWith(prefix)) return;
@@ -640,7 +638,7 @@ client.on('message', message => {
 
 
 
-var prefix = "+"
+
 client.on('message', message => {
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
