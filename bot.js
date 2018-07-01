@@ -599,7 +599,7 @@ client.on("message", message => {
 
 
 
-var prefix = "+";
+
 
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
