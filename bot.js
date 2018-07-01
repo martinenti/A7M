@@ -585,7 +585,18 @@ client.on('message' , async (message) => {
 
 
 
-
+client.on('message', message => {
+     if (message.content === "+invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
