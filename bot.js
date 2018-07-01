@@ -691,8 +691,8 @@ client.on('ready', () => {
 	client.user.setGame(`NoName Team | $help`,"http://twitch.tv/WeDontHaveChannel")
     client.user.setStatus("dnd")
 });
-let points = JSON.parse(fs.readFileSync('./typePTS.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
-const prefix = "."; 
+let points = JSON.parse(fs.readFileSync('./points.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
+const prefix = "+"; 
 ///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
 
 client.on('message', message => {
