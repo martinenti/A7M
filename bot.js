@@ -585,18 +585,17 @@ client.on('message' , async (message) => {
 
 
 
-client.on('message', message => {
-     if (message.content === "+invite") {
-     let embed = new Discord.RichEmbed("https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=8&scope=bot")
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
+client.on("message", message => {
+ if (message.content === "-invite") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('© Heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=8&scope=bot`)
+  message.author.send({embed});
+
+ }
 });
+
 
 
 
