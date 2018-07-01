@@ -583,7 +583,16 @@ client.on('message' , async (message) => {
 
 
 
-
+client.on("message", message => {
+ if (message.content === "+invite") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('© Heroes Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .addField('شكرا لك لاستخدامك ل هيروز بوت', `https://discordapp.com/api/oauth2/authorize?client_id=461405521899946000&permissions=8&scope=bot`)
+  message.author.send({embed});
+       }
+  
+});
 
 
 
