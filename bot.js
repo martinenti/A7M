@@ -684,16 +684,7 @@ m.edit({embed: new Discord.RichEmbed().setTitle('لديك 15 ثانيه للاج
 
 
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[Users] ${client.users.size}`)
-	client.user.setGame(`NoName Team | $help`,"http://twitch.tv/WeDontHaveChannel")
-    client.user.setStatus("dnd")
-});
-let points = JSON.parse(fs.readFileSync('./points.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
-const prefix = "+"; 
-///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
+
 
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
