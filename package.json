@@ -4,9 +4,8 @@
   "version": "2.0.0",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js
-   },
-   
+    "start": "node bot.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/then/fs.git"
