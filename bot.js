@@ -1058,7 +1058,7 @@ const kingmas = [
 
 
 bot.on("guildMemberAdd", member => {
-      const welcomer = bot.channels.get("📰-announcement❊الاعلانات-💦");
+      const welcomer = bot.channels.get("257148202707451904");
       //*let welcomer = member.guild.channels.find("name","welcome");
       if(!welcomer) return;
       if(welcomer) {
