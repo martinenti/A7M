@@ -1204,7 +1204,7 @@ if(message.content.startsWith(prefix+"id")) {
   client.login("Bot");
 
 
-const fs = require("fs"); // npm i fs
+
 const Canvas = require("canvas"); //npm i canvas
 const jimp = require("jimp"); //npm i jimp
 const moment = require("moment") //npm i moment
