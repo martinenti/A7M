@@ -175,49 +175,56 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    const prefix = '+'
-var args = message.content.split(" ").slice(1);    
-if(message.content.startsWith(prefix + 'id')) {
-var year = message.author.createdAt.getFullYear()
-var month = message.author.createdAt.getMonth()
-var day = message.author.createdAt.getDate()
-var men = message.mentions.users.first();  
-let args = message.content.split(' ').slice(1).join(' ');
-if (args == '') {
-var z = message.author;
-}else {
-var z = message.mentions.users.first();
+
+
+client.on('message' , message => {
+    var prefix = "+";
+if(message.content.startsWith(prefix+"userinfo")) {
+    let user = message.mentions.users.first() || message.author;
+    const joineddiscord = (user.createdAt.getDate() + 1) + '-' + (user.createdAt.getMonth() + 1) + '-' + user.createdAt.getFullYear() + ' | ' + user.createdAt.getHours() + ':' + user.createdAt.getMinutes() + ':' + user.createdAt.getSeconds();
+    message.delete();
+    let game;
+    if (user.presence.game === null) {
+        game = 'لا يلعب حاليا.';
+    } else {
+        game = user.presence.game.name;
+    }
+    let messag;
+    if (user.lastMessage === null) {
+        messag = 'لم يرسل رسالة. ';
+    } else {
+        messag = user.lastMessage;
+    }
+    let status;
+    if (user.presence.status === 'online') {
+        status = ':green_heart:';
+    } else if (user.presence.status === 'dnd') {
+        status = ':heart:';
+    } else if (user.presence.status === 'idle') {
+        status = ':yellow_heart:';
+    } else if (user.presence.status === 'offline') {
+        status = ':black_heart:';
+    }
+    if (user.presence.status === 'offline') {
+        stat = 0x000000;
+    } else if (user.presence.status === 'online') {
+        stat = 0x00AA4C;
+    } else if (user.presence.status === 'dnd') {
+        stat = 0x9C0000;
+    } else if (user.presence.status === 'idle') {
+        stat = 0xF7C035;
+    }
+    const embed = new Discord.RichEmbed()
+  .addField('**UserInfo:**', `**name:** ${user.username}#${user.discriminator}\n**JoinedDiscord:** ${joineddiscord}\n**LastMessage:** ${messag}\n**Playing:** ${game}\n**Status:** ${status}\n**Bot?** ${user.bot}`, true)
+  .setThumbnail(user.displayAvatarURL)
+  .addField(`Roles:`, message.guild.members.get(user.id).roles.array(role => role.name).slice(1).join(', '))
+  .addField('DiscordInfo:', `**Discriminator:** #${user.discriminator}\n**ID:** ${user.id}\n**Username:** ${user.username}`)
+  .setAuthor(`معلومات ${user.username}`, user.displayAvatarURL)
+  .setColor(stat);
+    message.channel.send({embed})
+  .catch(e => logger.error(e));
 }
-
-let d = z.createdAt;          
-let n = d.toLocaleString();   
-let x;                       
-let y;                        
-
-if (z.presence.game !== null) {
-y = `${z.presence.game.name}`;
-} else {
-y = "No Playing... |??.";
-}
-let embed = new Discord.RichEmbed()
-.setColor("#502faf")
-.addField(': ?? | اسمك',`**<@` + `${z.id}` + `>**`, true)
-.addField(': ?? | ايديك', "**"+ `${z.id}` +"**",true)
-.addField(': ? | Playing','**'+y+'**' , true)
-.addField(': ?? | تاق حق حسابك',"**#" +  `${z.discriminator}**`,true)
-.addField('**: ?? | التاريح الذي انشئ فيه حسابك**', message.author.createdAt.toLocaleString())
-.addField("**: ? | تاريخ دخولك للسيرفر**", message.member.joinedAt.toLocaleString())    
-
-.setThumbnail(`${z.avatarURL}`)
-.setFooter(message.author.username, message.author.avatarURL)
-
-message.channel.send({embed});
-    if (!message) return message.reply('**ضع المينشان بشكل صحيح  ? **').catch(console.error);
-
-}
-
-});
+ });
 
 client.on("message", message => {
  if (message.content === "-support") {
