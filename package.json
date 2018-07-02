@@ -27,7 +27,6 @@
         "stream-to-buffer": "0.1.0",
         "tinycolor2": "1.4.1",
         "url-regex": "3.2.0"
-      }
     },
   "repository": {
     "type": "git",
