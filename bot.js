@@ -127,7 +127,7 @@ if (message.content === '+العاب') {
 
 
 
-
+const fs = require("fs");
 const Canvas = require("canvas"); //npm i canvas
 const jimp = require("jimp"); //npm i jimp
 const moment = require("moment") //npm i moment
