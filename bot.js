@@ -337,14 +337,14 @@ if (!profile[getvalueof.id]) profile[getvalueof.id] = {points: 0,reps: "NOT YET"
                         ctx.fontSize = '40px'; // عرض الخط
                         ctx.fillStyle = "#000000"; // لون الخط
                         ctx.textAlign = "center"; // محاذا ة النص
-                        ctx.fillText(`${getvalueof.username}`, 153, 173) // احداثيات اسمك
+                        ctx.fillText(`${getvalueof.username}`, 153, 165) // احداثيات اسمك
  
                         //ur name
                         ctx.font = 'bold 16px Arial'; // حجم الخط و نوعه
                         ctx.fontSize = '40px'; // عرض الخط
                         ctx.fillStyle = "#f1f1f1"; // لون الخط
                         ctx.textAlign = "center"; // محاذا ة النص
-                        ctx.fillText(`${getvalueof.username}`, 151, 171) // احداثيات اسمك
+                        ctx.fillText(`${getvalueof.username}`, 151, 163) // احداثيات اسمك
  
                         //credit
                         ctx.font = "bold 12px Arial" // نوع الخط وحجمه
@@ -440,7 +440,7 @@ const prefix = "+";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("آي دي روم اللوق").send({embed : banembed})
+  client.channels.get("461704008743256064").send({embed : banembed})
 }
 });
 
