@@ -574,7 +574,7 @@ client.on('message', message => {
                m.delete()
            }, 32000)
              setTimeout(function() {
-               message.channel.send('تم تهكيرك')
+               message.channel.send('Hacked Done')
            }, 33000)
            });
          }
