@@ -456,7 +456,7 @@ client.on('message', message => {
      var Canvas = require('canvas')
    , Image = new Canvas.Image
    , canvas = new Canvas(450, 170)
-   , ctx = canvas.getContext('3d');
+   , ctx = canvas.getContext('2d');
    ctx.font = '30px Impact';
    let args = message.content.split(" ").slice(1);
    
