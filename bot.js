@@ -37,8 +37,10 @@ if (message.content === '+help') {
    .addField("**:globe_with_meridians:─══════ {✯اختار✯} ══════─**","** **")
    .addField("** +عام :one: **","**عشان تعرض الاكواد العامة**")   
    .addField("** +ادمن :two: **","**عشان تعرض اكواد الادمن**")
-   .addField("** +العاب :three: **","**عشان تعرض اكواد الالعاب**")                
+   .addField("** +العاب :three: **","**عشان تعرض اكواد الالعاب**")  
+   .addField("** +اغاني :four: **","**عشان تعرض اكواد الاغاني**")
    .addField("**:globe_with_meridians:─══════ {✯Heroes Bot✯} ══════─**","** **") 
+
      
 .setColor('RANDOM')
  message.author.sendEmbed(embed);
@@ -63,13 +65,16 @@ if (message.content === '+عام') {
      .addField("** +ping :stopwatch:**","**لعرض سرعه اتصال البوت بالسيرفر**")
      .addField("** +id :id:**","**لعرض معلومات عن حسابك**")
      .addField("** +say :speaking_head:**","**عشان تخي البوت يتكلم نفس كلامك**")
-     .addField("** +level :level_slider:**","**عشان تشوف لفلك**")
      .addField("** +createcolors :confetti_ball:**","**عشان تصنع 137 لون للسيرفر**")
      .addField("**  (لون +(من 1 الي137 :confetti_ball:**","**tعشان تغير لونك**")
      .addField("** +avatar :milky_way:**","**عشان يعرض صورتك**")
      .addField("** +bot :robot: **","**عشان تشوف معلومات عن البوت**")
      .addField("** لينك :link:**","**عشان يعطيك لينك السيرفر**")
      .addField("** +invite :calling: **","**عشان تضيف البوت لسيرفركr**")
+     .addField("** +credit :calling: **","**عشان تشوف رصيدك**")
+     .addField("** +daily :calling: **","**هديه يوميه**")
+    .addField("** +embed :calling: **","**كتب كلامك في امبد**")
+	 .addField("** +profile:calling: **","**عرض البروفايل**")
      .addField("**:globe_with_meridians:─══════ {✯Heroes Bot✯} ══════─**","** **")
     
 .setColor('RANDOM')
@@ -105,7 +110,7 @@ if (message.content === '+العاب') {
         
      .addField("**:globe_with_meridians:─══════ {✯اكواد الالعاب✯} ══════─**","** **")
          .addField("** +لو خيروك :grey_question:**","**عشان تلعب لو خيروك**")
-         .addField("** +فكك :grey_question:**","**عشان تلعب فكك**")
+       .addField("** +فكك:grey_question:**","**عشان تلعب فكك**")
          .addField("** +حب :grey_question:**","**للعب لعبه الحب**")
          .addField("** +مريم :grey_question:**","**للعب لعبه مريم**")
          .addField("** +عقاب :grey_question:**","**للعب لعبه العقاب**")
@@ -120,12 +125,22 @@ if (message.content === '+العاب') {
    }
   
  }); 
-
-
-
-
-
-
+client.on('message', message => {
+if (message.content === '+اغاني') {
+        let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL) 
+	
+ .addField("**:globe_with_meridians:─══════ {✯اكوادالاغاني✯} ══════─**","** **")
+ .addField("** +play :one:**","**لتشغيل أغنية برآبط أو بأسم**")
+ .addField("** +skip  :tow:**","**لتجاوز الاغنيه الحاليه**")
+.addField("** +pause :three:**","**للايقاف المؤقت**")
+.addField("** +resume :four:**","**مواصله تشغيل الاغنيه **")
+.addField("** +vol :five:**","**لتغيير درجة الصوت 100 - 0**")
+.addField("** +stop :six:**","**لايقاف البوت**")
+.addField("** +np :seven:**","**لمعرفه الاغنيه المشغله حاليا**")
+.addField("** +queue :eight:**","**لمعرفه قائمه التشغيل**")
+  .addField("**:globe_with_meridians:─══════ {✯Heroes Bot✯} ══════─**","** **")	
+	
 
 const fs = require("fs");
 const Canvas = require("canvas"); //npm i canvas
@@ -623,7 +638,7 @@ client.on("message", (message) => {
 client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('-bc-users')){
+if (message.content.startsWith('+bc-users')){
 if(!message.author.id === '257147010488991744') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
@@ -687,7 +702,7 @@ client.on('message', async msg => { // eslint-disable-line
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+		if (!voiceChannel) return msg.channel.send(' يجب ان تكون بروم صوتي .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
@@ -719,7 +734,7 @@ client.on('message', async msg => { // eslint-disable-line
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
-			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+			        .setDescription(`**الرجآء إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 					.setFooter("CODES")
@@ -759,7 +774,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 		return undefined;
 	} else if (command === `vol`) {
 		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
-		if (!serverQueue) return msg.channel.send('لا يوجد شيء شغآل.');
+		if (!serverQueue) return msg.channel.send('لا يوجد شيء قيد التشغيل.');
 		if (!args[1]) return msg.channel.send(`:loud_sound: مستوى الصوت **${serverQueue.volume}**`);
 		serverQueue.volume = args[1];//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
@@ -889,29 +904,207 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 
 });
 
-client.on("message", message => {
- if (message.content === `${prefix}`) {
-  const embed = new Discord.RichEmbed() //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setColor("#000000")//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+client.on('message', message => {
+    if (message.content.startsWith("+avatar")) {
+if(!message.channel.guild) return;
 
- `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-   message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+        var mentionned = message.mentions.users.first();
+
+    var client;
+      if(mentionned){
+          var client = mentionned;
+      } else {
+          var client = message.author;
+
+      }
+
+        const embed = new Discord.RichEmbed()
+                           .addField('Requested by:', "<@" + message.author.id + ">")
+
+        .setColor(000000)
+        .setFooter(اسم بوتك, 'ur bot image link')
+        .setImage(${client.avatarURL})
+      message.channel.sendEmbed(embed);
+    }
+});
+	
+	client.on('message', message => {
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc') {
+    if (!args[1]) {
+message.channel.send("**.bc <message>**");
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            var bc = new Discord.RichEmbed()
+            .setAuthor(message.author.username, message.author.avatarURL)
+            .addField('** الـسيرفر**', `${message.guild.name}`,true)
+            .addField(' **الـمرسل **', `${message.author.username}#${message.author.discriminator}`,true)
+            .addField(' **الرسالة** ', args)
+            .setThumbnail(message.guild.iconURL)
+            .setColor('RANDOM')
+            m.send(`${m}`,{embed: bc});
+        });
+        const AziRo = new Discord.RichEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL)   
+        .setTitle('✔️ | جاري ارسال رسالتك ') 
+        .addBlankField(true)
+        .addField('👥 | عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)        
+        .addField('📋| الرسالة ', args)
+        .setColor('RANDOM')  
+        message.channel.sendEmbed(AziRo);          
+    }
+    } else {
+        return;
+    }
+});
+	
+	var prefix = "+"
+client.on('message', message => {
+  if (message.author.x5bz) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "kick") {
+               if(!message.channel.guild) return message.reply('** This command only for servers**');
+         
+  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("**You Don't Have ` KICK_MEMBERS ` Permission**");
+  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
+  let user = message.mentions.users.first();
+  let reason = message.content.split(" ").slice(2).join(" ");
+  /*let b5bzlog = client.channels.find("name", "5bz-log");
+
+  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if(!reason) return message.reply ("**اكتب سبب الطرد**");
+  if (!message.guild.member(user)
+  .kickable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
+
+  message.guild.member(user).kick();
+
+  const kickembed = new Discord.RichEmbed()
+  .setAuthor(`KICKED!`, user.displayAvatarURL)
+  .setColor("RANDOM")
+  .setTimestamp()
+  .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
+  .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
+  message.channel.send({
+    embed : kickembed
+  })
+}
+});
+
+var prefix = "+"
+client.on('message', message => {
+  if (message.author.x5bz) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "ban") {
+               if(!message.channel.guild) return message.reply('** This command only for servers**');
+         
+  if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**You Don't Have ` BAN_MEMBERS ` Permission**");
+  if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
+  let user = message.mentions.users.first();
+  let reason = message.content.split(" ").slice(2).join(" ");
+  /*let b5bzlog = client.channels.find("name", "5bz-log");
+
+  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if(!reason) return message.reply ("**اكتب سبب الطرد**");
+  if (!message.guild.member(user)
+  .bannable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
+
+  message.guild.member(user).ban(7, user);
+
+  const banembed = new Discord.RichEmbed()
+  .setAuthor(`BANNED!`, user.displayAvatarURL)
+  .setColor("RANDOM")
+  .setTimestamp()
+  .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
+  .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
+  .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
+  message.channel.send({
+    embed : banembed
+  })
+}
+});	
     
-   }
-   }); 
+var prefix = "+";
 
-    
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+  
+ 
+
+if (command == "embed") {
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor(0x23b2d6)
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
 
 
+});
+
+	var prefix = "+";
+var cats = ["https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg","http://www.dogbazar.org/wp-content/uploads/2014/09/british-bull-dog-puppies.jpg","http://cdn2-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg","http://cdn.akc.org/Marketplace/Breeds/German_Shepherd_Dog_SERP.jpg","https://animalso.com/wp-content/uploads/2016/12/black-german-shepherd_2.jpg","https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpg","https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg","https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg","https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg","http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg","https://www.thelocal.de/userdata/images/article/fa6fd5014ccbd8f4392f716473ab6ff354f871505d9128820bbb0461cce1d645.jpg","https://www.adelaidezoo.com.au/wp-content/uploads/sites/2/animals/GiantPanda3Slider.jpg","http://imagem.band.com.br/f_230168.jpg"]
+    client.on('message', message => {
+        var args = message.content.split(" ").slice(1);
+    if(message.content.startsWith(prefix + 'animal')) {
+         var cat = new Discord.RichEmbed()
+.setImage(cats[Math.floor(Math.random() * cats.length)])
+message.channel.sendEmbed(cat);
+    }
+});
+	
+	
+	client.on('message', function(message) {
+    if(!message.channel.guild) return;
+if(message.content ===  '+colors ') {
+if(message.member.hasPermission('MANAGE_ROLES')) {
+setInterval(function(){})
+message.channel.send('جاري عمل الالوان |✅')
+}else{
+message.channel.send('ما معاك البرمشن المطلوب  |❌')
+}
+}
+});
+
+client.on('message', message=>{
+if (message.content ===  'f!color 140'){
+if(!message.channel.guild) return;
+if (message.member.hasPermission('MANAGE_ROLES')){
+  setInterval(function(){})
+    let count = 0;
+    let ecount = 0;
+for(let x = 1; x < 141; x++){
+message.guild.createRole({name:x,
+color: 'RANDOM'})
+}
+}
+}
+});
 
 
 client.login(process.env.BOT_TOKEN);
