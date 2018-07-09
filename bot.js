@@ -665,7 +665,7 @@ client.on('guildCreate', guild => {
 
 
 
-const Discord = require("discord.js");
+
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
@@ -692,7 +692,7 @@ client.on('ready', () => {
     client.user.setStatus("idle")
 });
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-const prefix = "$"
+const prefix = "+"
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
