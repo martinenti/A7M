@@ -673,7 +673,6 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
-const client = new Discord.Client();
 
 /*
 البكجآت
@@ -685,13 +684,7 @@ npm install simple-youtube-api
 npm install queue
 */
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("idle")
-});
-//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+
 const prefix = "+"
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
@@ -909,28 +902,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 }
 
 });
-
-client.on("message", message => {
- if (message.content === `${prefix}`) {
-  const embed = new Discord.RichEmbed() //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setColor("#000000")//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
-
- `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-   message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-    
-   }
-   }); 
-   
-	client.login("توكن بوتك");
 
 
 
