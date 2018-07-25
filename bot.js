@@ -1022,7 +1022,6 @@ m.edit({embed: new Discord.RichEmbed().setTitle('لديك 15 ثانيه للاج
 
 
 
-let points = {}
 
 
 client.on('message', message => {
