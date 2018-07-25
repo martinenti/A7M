@@ -987,7 +987,7 @@ if (message.content.startsWith(prefix + 'نقاطي')) { ////هنا امر ال�
 });
 
 
-let points = JSON.parse(fs.readFileSync('./Points.json'));
+
 client.on('message', message => {
     if (!points[message.author.id]) points[message.author.id] = { 
         points: 0,
