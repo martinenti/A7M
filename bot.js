@@ -1019,7 +1019,7 @@ m.edit({embed: new Discord.RichEmbed().setTitle('لديك 15 ثانيه للاج
     }
     });	
 	
-let points = JSON.parse(fs.readFileSync('./points.json', 'utf8'));
+
 
 ////اول شي طبعا الكود من صنعي
 ////ثاني شي يمنع نشره الا بدون حقوقي وحقوق كودز
