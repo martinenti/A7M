@@ -1021,47 +1021,44 @@ m.edit({embed: new Discord.RichEmbed().setTitle('لديك 15 ثانيه للاج
 	
 
 
-////اول شي طبعا الكود من صنعي
-////ثاني شي يمنع نشره الا بدون حقوقي وحقوق كودز
-////ثالث شي لاي استفسار انا موجود علي الديسكورد 
-////الكود متعوب عليه الف 
-////ما تجي تبيعه بأي سيرفر وتقول انا اللي مسويه ومدري ايش
-////يرجي الالتزام بالشروط رجاء
-////ملاحظه الكود 203 صوره وجواب وكلهم صحيحين متأكد منهم مليون مره 
-////اذا صار معك اي خطأ تعال ديسكورد وابشر بس
+
+let points = {}
+
+
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
-if (message.content.startsWith(prefix + 'لاعب')) { ////هنا الامر اللي بتكتبه ويعطيك الصوره والكلام بس الامر لازم تحط معه البرفكس اللي بتحطه فوق
-    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));////هنا الرساله ذي اذا احد دخل الخاص حق البوت وسوي *لاعب يقوله ما ينفع بس في السيرفرات
+if (message.content.startsWith(prefix + 'فكك')) {
+    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
 const type = require('./fkk.json');
 const item = type[Math.floor(Math.random() * type.length)];
 const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
-message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').then(msg => { ////هادي الرساله اللي يكتبها يقوله لديك 15 ثانيه تبي تعدلها  علي راحتك
+message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').then(msg => {
 
-msg.channel.sendFile(`${item.image}`).then(() => {
+            
+msg.channel.send(`${item.type}`).then(() => {
         message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
         .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **كفوو والله يا شنب اجابتك صحيحه**`); ////هنا يقوله اجابتك صحيحه وعلامة صح وهيك تبي تعدلها علي راحتك
-        console.log(`[Typing] ${collected.first().author} typed the word.`);////هون بيكتبلك في الكونسل ايدي الشخص اللي كتب الاجابه صحيحه
+        message.channel.send(`${collected.first().author} ✅ **مبروك لقد كسبت نقطه
+لمعرفة نقطاك الرجاء كتابة %نقاطي**`);
+        console.log(`[Typing] ${collected.first().author} typed the word.`);
             let userData = points[message.author.id];
             userData.points++;
           })
           .catch(collected => {
-            message.channel.send(`**تم الانتهاء من الوقت  حظ اوفر المره القادمه :stopwatch: لاجابه الصحيحه هي : __${item.answers}__**`); ////هنا يقوله تم الانتهاء من الوقت لما ما يجاوب والوقت يخلص تبي تعدلها علي راحتك
+            message.channel.send(`:x: **خطأ حاول مرة اخرى**`);
             console.log('[Typing] Error: No one type the word.');
           })
         })
     })
 }
 });
-
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'نقاطي')) { ////هنا امر النقاط تبي تعدلها علي راحتك
+if (message.content.startsWith(prefix + 'نقاطي')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     let userData = points[message.author.id];
     let embed = new Discord.RichEmbed()
@@ -1070,9 +1067,8 @@ if (message.content.startsWith(prefix + 'نقاطي')) { ////هنا امر ال�
     .setDescription(`نقاطك: \`${userData.points}\``)
     message.channel.sendEmbed(embed)
   }
-  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  })
+
+  
 });
 
 
