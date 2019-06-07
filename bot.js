@@ -28,21 +28,6 @@ client.user.setGame(`+help`,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.on('message', message => {
-if (message.content === '+help') {
-        let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-     
-   .addField("**:globe_with_meridians:─══════ {✯ اختار اللغة -choose the language ✯} ══════─**","** **")
-   .addField("** +AR :one: **","**عشان تختار اللغة العربية**")   
-   .addField("** +EN :two: **","**to the English language**")
-   .addField("**:globe_with_meridians:─══════ {✯WarLegends✯} ══════─**","** **") 
-
-     
-.setColor('RANDOM')
- message.author.sendEmbed(embed);
-   }
-});
 
 
 client.on('message', message => {
@@ -51,11 +36,9 @@ if (message.content === '+AR') {
 .setThumbnail(message.author.avatarURL)    
      
    .addField("**:globe_with_meridians:─══════ {✯اختار✯} ══════─**","** **")
-   .addField("** +عام :one: **","**عشان تعرض الاكواد العامة**")   
-   .addField("** +ادمن :two: **","**عشان تعرض اكواد الادمن**")
-   .addField("** +العاب :three: **","**عشان تعرض اكواد الالعاب**")  
-   .addField("** +اغاني :four: **","**عشان تعرض اكواد الاغاني**")
-   .addField("**:globe_with_meridians:─══════ {✯Heroes Bot✯} ══════─**","** **") 
+   .addField("** +English:one: **","**عشان تعرض الاكواد العامة**")   
+   .addField("** +عربي :two: **","**عشان تعرض اكواد الادمن**")
+   .addField("**:globe_with_meridians:─══════ {✯WarLegends✯} ══════─**","** **") 
 
      
 .setColor('RANDOM')
