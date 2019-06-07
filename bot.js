@@ -63,7 +63,7 @@ if (message.content === '+AR') {
    }
 });
  client.on('message', message => {
-     if (message.content === (prefix + "help")) {
+     if (message.content === (prefix + "AR")) {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
